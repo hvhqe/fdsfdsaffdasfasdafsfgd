@@ -44,7 +44,6 @@ body.loading {
     z-index: 1;
 }
 
-/* ---------- cursor glow ---------- */
 .cursor-glow {
     position: fixed;
     width: 400px;
@@ -64,7 +63,6 @@ body.loading {
     opacity: 1;
 }
 
-/* ---------- preloader ---------- */
 .preloader {
     position: fixed;
     inset: 0;
@@ -224,7 +222,6 @@ body.loaded .hero-inner {
     transition: opacity 0.8s ease 0.2s, transform 0.8s ease 0.2s;
 }
 
-/* ---------- header ---------- */
 .header {
     position: sticky;
     top: 0;
@@ -314,7 +311,6 @@ body.loaded .hero-inner {
     box-shadow: 0 4px 12px var(--accent-glow);
 }
 
-/* ---------- buttons ---------- */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -366,7 +362,6 @@ body.loaded .hero-inner {
     border-radius: 14px;
 }
 
-/* ---------- hero ---------- */
 .hero {
     position: relative;
     padding: 100px 0 120px;
@@ -454,7 +449,6 @@ body.loaded .hero-inner {
     letter-spacing: 0.05em;
 }
 
-/* ---------- sections ---------- */
 .section {
     padding: 96px 0;
     position: relative;
@@ -480,7 +474,6 @@ body.loaded .hero-inner {
     margin-bottom: 56px;
 }
 
-/* ---------- features ---------- */
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -517,7 +510,6 @@ body.loaded .hero-inner {
     font-size: 15px;
 }
 
-/* ---------- commands ---------- */
 .search-wrap {
     max-width: 480px;
     margin: 0 auto 24px;
@@ -622,7 +614,6 @@ body.loaded .hero-inner {
     opacity: 1;
 }
 
-/* ---------- steps ---------- */
 .steps {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -679,7 +670,6 @@ body.loaded .hero-inner {
     margin-bottom: 24px;
 }
 
-/* ---------- faq ---------- */
 .faq {
     max-width: 800px;
     margin: 0 auto;
@@ -744,7 +734,6 @@ body.loaded .hero-inner {
     color: var(--accent);
 }
 
-/* ---------- footer ---------- */
 .footer {
     background: var(--bg-alt);
     border-top: 1px solid var(--border);
@@ -797,7 +786,6 @@ body.loaded .hero-inner {
     text-align: center;
 }
 
-/* ---------- responsive ---------- */
 @media (max-width: 900px) {
     .nav {
         display: none;

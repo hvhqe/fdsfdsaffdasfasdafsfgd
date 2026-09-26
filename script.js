@@ -1,4 +1,3 @@
-// ---------- cursor glow ----------
 (function () {
     const glow = document.getElementById('cursor-glow');
     if (!glow) return;
@@ -34,7 +33,6 @@
     animate();
 })();
 
-// ---------- preloader ----------
 (function () {
     const preloader = document.getElementById('preloader');
     if (!preloader) return;
@@ -60,7 +58,6 @@
     }, 2400);
 })();
 
-// ---------- i18n ----------
 const I18N = {
     ru: {
         nav_features: 'Возможности',
@@ -255,7 +252,6 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => setLang(btn.dataset.lang));
 });
 
-// ---------- commands ----------
 const COMMANDS = [
     { name: '.haha [n]', desc: { ru: 'N сообщений пк-смеха (по умолчанию 5)', en: 'N pk-laugh messages (default 5)' }, cat: 'spam' },
     { name: '.spam [n] [текст]', desc: { ru: 'N раз отправить твой текст', en: 'Send your text N times' }, cat: 'spam' },
@@ -360,13 +356,11 @@ if (search) {
     });
 }
 
-// ---------- init ----------
 const savedLang = localStorage.getItem('aimstar_lang')
     || (navigator.language.startsWith('ru') ? 'ru' : 'en');
 
 setLang(savedLang);
 
-// ---------- scroll animation ----------
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
