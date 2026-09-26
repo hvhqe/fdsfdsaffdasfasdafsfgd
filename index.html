@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aimstar — архиватор удалённых сообщений</title>
+    <meta name="description" content="aimstar — телеграм бот, который сохраняет удалённые сообщения и даёт мощные команды прямо в чатах.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='75' font-size='80' fill='%23a855f7'%3E★%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+<div class="cursor-glow" id="cursor-glow"></div>
+
+<div class="preloader" id="preloader">
+    <div class="preloader-panel preloader-panel-left"></div>
+    <div class="preloader-panel preloader-panel-right"></div>
+    <div class="preloader-content">
+        <div class="preloader-logo">
+            <span class="preloader-star">★</span>
+            <span class="preloader-text">
+                <span>a</span><span>i</span><span>m</span><span>s</span><span>t</span><span>a</span><span>r</span>
+            </span>
+        </div>
+        <div class="preloader-bar">
+            <div class="preloader-bar-fill"></div>
+        </div>
+        <div class="preloader-tagline">архиватор удалённых сообщений</div>
+    </div>
+</div>
+
+<header class="header">
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span class="logo-mark">★</span>
+            <span class="logo-text">aimstar</span>
+        </a>
+        <nav class="nav">
+            <a href="#features" data-i18n="nav_features">Возможности</a>
+            <a href="#commands" data-i18n="nav_commands">Команды</a>
+            <a href="#connect" data-i18n="nav_connect">Подключить</a>
+            <a href="#faq" data-i18n="nav_faq">FAQ</a>
+        </nav>
+        <div class="header-actions">
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="ru">RU</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+            <a href="https://t.me/aimstarsavebot" target="_blank" class="btn btn-primary btn-sm" data-i18n="header_open">Открыть бота</a>
+        </div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container hero-inner">
+        <div class="badge" data-i18n="hero_badge">бесплатный • без подписок • без рекламы</div>
+        <h1 class="hero-title" data-i18n-html="hero_title">
+            Сохраняем <span class="accent">удалённые</span> сообщения<br>
+            и даём команды прямо в чатах
+        </h1>
+        <p class="hero-sub" data-i18n="hero_sub">
+            aimstar подключается к Telegram Business и работает от твоего имени.
+            Собеседник ничего не заподозрит. Все удалённые сообщения — в твоей личке с ботом.
+        </p>
+        <div class="hero-buttons">
+            <a href="https://t.me/aimstarsavebot" target="_blank" class="btn btn-primary" data-i18n="hero_btn_bot">
+                Подключить бота
+            </a>
+            <a href="https://t.me/+-SDA_jDZh0hmZDUy" target="_blank" class="btn btn-ghost" data-i18n="hero_btn_channel">
+                Наш канал
+            </a>
+        </div>
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label" data-i18n="stat_works">работает</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">0₽</div>
+                <div class="stat-label" data-i18n="stat_forever">навсегда</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">30+</div>
+                <div class="stat-label" data-i18n="stat_commands">команд</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="features" class="section">
+    <div class="container">
+        <h2 class="section-title" data-i18n="features_title">Возможности</h2>
+        <p class="section-sub" data-i18n="features_sub">Всё, что умеет aimstar</p>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📥</div>
+                <h3 data-i18n="f1_title">Архив удалённых</h3>
+                <p data-i18n="f1_desc">Собеседник удалил сообщение — оно мгновенно прилетает тебе в личку с ботом. С фото, видео, голосовыми.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✏️</div>
+                <h3 data-i18n="f2_title">Отслеживание правок</h3>
+                <p data-i18n="f2_desc">Видишь что было в сообщении до того, как собеседник его отредактировал.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3 data-i18n="f3_title">AI и переводы</h3>
+                <p data-i18n="f3_desc">Спроси Gemini прямо в чате или переведи любое сообщение на русский одним словом.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎮</div>
+                <h3 data-i18n="f4_title">Игры</h3>
+                <p data-i18n="f4_desc">Рулетка, монетка, дуэль, крестики-нолики — играй с собеседником от своего имени.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3 data-i18n="f5_title">Модерация</h3>
+                <p data-i18n="f5_desc">Мут, постоянный мут, антимут. Нарушитель не напишет ни слова.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3 data-i18n="f6_title">Мемы и медиа</h3>
+                <p data-i18n="f6_desc">Случайные мемы, водяные знаки на фото, чёрные поля с текстом.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="commands" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title" data-i18n="cmd_title">Команды</h2>
+        <p class="section-sub" data-i18n="cmd_sub">Пишешь в чате с собеседником — бот делает</p>
+
+        <div class="search-wrap">
+            <input type="text" id="search" class="search" placeholder="Поиск команды..." data-i18n-placeholder="cmd_search">
+        </div>
+
+        <div class="cmd-filters">
+            <button class="filter active" data-filter="all" data-i18n="filter_all">Все</button>
+            <button class="filter" data-filter="spam" data-i18n="filter_spam">Спам</button>
+            <button class="filter" data-filter="text" data-i18n="filter_text">Текст</button>
+            <button class="filter" data-filter="util" data-i18n="filter_util">Утилиты</button>
+            <button class="filter" data-filter="game" data-i18n="filter_game">Игры</button>
+            <button class="filter" data-filter="media" data-i18n="filter_media">Медиа</button>
+            <button class="filter" data-filter="mod" data-i18n="filter_mod">Модерация</button>
+        </div>
+
+        <div class="cmd-grid" id="cmd-grid"></div>
+    </div>
+</section>
+
+<section id="connect" class="section">
+    <div class="container">
+        <h2 class="section-title" data-i18n="connect_title">Как подключить</h2>
+        <p class="section-sub" data-i18n="connect_sub">Один раз и навсегда, 30 секунд</p>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-num">1</div>
+                <h3 data-i18n="s1_title">Открой настройки</h3>
+                <p data-i18n="s1_desc">Telegram → Настройки → Telegram Business</p>
+            </div>
+            <div class="step">
+                <div class="step-num">2</div>
+                <h3 data-i18n="s2_title">Раздел «Чат-боты»</h3>
+                <p data-i18n="s2_desc">Тапни на раздел и выбери «Добавить бота»</p>
+            </div>
+            <div class="step">
+                <div class="step-num">3</div>
+                <h3 data-i18n="s3_title">Введи @aimstarsavebot</h3>
+                <p data-i18n="s3_desc">Скопируй имя и вставь в поиск</p>
+            </div>
+            <div class="step">
+                <div class="step-num">4</div>
+                <h3 data-i18n="s4_title">Выдай все права</h3>
+                <p data-i18n="s4_desc">Включи все 5 галочек в настройках бота</p>
+            </div>
+        </div>
+
+        <div class="cta-box">
+            <p data-i18n="cta_ready">Готов?</p>
+            <a href="https://t.me/aimstarsavebot" target="_blank" class="btn btn-primary btn-lg" data-i18n="cta_btn">
+                Открыть @aimstarsavebot
+            </a>
+        </div>
+    </div>
+</section>
+
+<section id="faq" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title" data-i18n="faq_title">FAQ</h2>
+        <p class="section-sub" data-i18n="faq_sub">Частые вопросы</p>
+
+        <div class="faq">
+            <details class="faq-item">
+                <summary data-i18n="q1">Бот платный?</summary>
+                <p data-i18n="a1">Нет. aimstar полностью бесплатный, без подписок, без рекламы, без ограничений.</p>
+            </details>
+            <details class="faq-item">
+                <summary data-i18n="q2">Что если собеседник удалит весь диалог целиком?</summary>
+                <p data-i18n="a2">Telegram не присылает уведомление об удалении всего диалога — только отдельных сообщений. Но всё, что бот видел вживую, уже сохранено в базе и останется у тебя.</p>
+            </details>
+            <details class="faq-item">
+                <summary data-i18n="q3">Работает ли бот в группах и каналах?</summary>
+                <p data-i18n="a3">Нет. aimstar работает только в личных переписках. Это ограничение Telegram Business API.</p>
+            </details>
+            <details class="faq-item">
+                <summary data-i18n="q4">Собеседник узнает, что я использую бота?</summary>
+                <p data-i18n="a4">Нет. Все команды работают от твоего имени. Собеседник видит обычные сообщения — как будто ты сам их пишешь.</p>
+            </details>
+            <details class="faq-item">
+                <summary data-i18n="q5">Как снять мут с собеседника?</summary>
+                <p data-i18n="a5">Напиши .unmute в чате или нажми красную кнопку «Размутить» под плашкой мута.</p>
+            </details>
+            <details class="faq-item">
+                <summary data-i18n="q6">Где хранятся мои сообщения?</summary>
+                <p data-i18n="a6">На сервере бота в защищённой базе данных. Доступ есть только у тебя — через личку с ботом.</p>
+            </details>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div class="footer-col">
+            <div class="logo">
+                <span class="logo-mark">★</span>
+                <span class="logo-text">aimstar</span>
+            </div>
+            <p class="footer-desc" data-i18n="footer_desc">Архиватор удалённых сообщений и команд для Telegram.</p>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer_links">Ссылки</h4>
+            <a href="https://t.me/aimstarsavebot" target="_blank" data-i18n="footer_bot">Бот</a>
+            <a href="https://t.me/+-SDA_jDZh0hmZDUy" target="_blank" data-i18n="footer_channel">Канал</a>
+        </div>
+        <div class="footer-col">
+            <h4 data-i18n="footer_docs">Документация</h4>
+            <a href="#commands" data-i18n="footer_commands">Команды</a>
+            <a href="#connect" data-i18n="footer_connect">Подключение</a>
+            <a href="#faq" data-i18n="footer_faq">FAQ</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container" data-i18n="footer_copy">
+            © 2026 aimstar. Все права защищены.
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
